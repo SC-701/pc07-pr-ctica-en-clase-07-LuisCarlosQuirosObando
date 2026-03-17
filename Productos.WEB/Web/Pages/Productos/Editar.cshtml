@@ -1,0 +1,42 @@
+﻿@page
+@model Web.Pages.Productos.EditarModel
+@{
+}
+<h1>Editar Producto</h1>
+<div class="container">
+    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto">
+        <form method="post">
+            <div class="form-group">
+                <label class="control-label" asp-for="productoResponse.Nombre"></label>
+                <input class="form-control" asp-for="productoResponse.Nombre" />
+                <span class="text-danger" asp-validation-for="productoResponse.Nombre"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="productoResponse.Descripcion"></label>
+                <input class="form-control" asp-for="productoResponse.Descripcion" />
+                <span class="text-danger" asp-validation-for="productoResponse.Descripcion"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="productoResponse.Precio"></label>
+                <input class="form-control" asp-for="productoResponse.Precio" />
+                <span class="text-danger" asp-validation-for="productoResponse.Precio"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="productoResponse.Stock"></label>
+                <input class="form-control" asp-for="productoResponse.Stock" />
+                <span class="text-danger" asp-validation-for="productoResponse.Stock"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="productoResponse.CodigoBarras"></label>
+                <input class="form-control" asp-for="productoResponse.CodigoBarras" />
+                <span class="text-danger" asp-validation-for="productoResponse.CodigoBarras"></span>
+            </div>
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <a class="btn btn-primary" asp-page="./index">Regresar</a>
+                <input type="submit" value="Editar" class="btn btn-success" />
+            </div>
+            <input type="hidden" asp-for="productoResponse.Id">
+        </form>
+    </div>
+</div>

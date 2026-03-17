@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstracciones", "Abstracciones\Abstracciones.csproj", "{0E419226-6A09-4135-A58B-047854D6E525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reglas", "Reglas\Reglas.csproj", "{E21C38E9-FDE3-4882-8B6C-FC4982A468C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{894F2354-315F-4DB5-B24C-1596F7F61E43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E419226-6A09-4135-A58B-047854D6E525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E419226-6A09-4135-A58B-047854D6E525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E419226-6A09-4135-A58B-047854D6E525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E419226-6A09-4135-A58B-047854D6E525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21C38E9-FDE3-4882-8B6C-FC4982A468C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21C38E9-FDE3-4882-8B6C-FC4982A468C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21C38E9-FDE3-4882-8B6C-FC4982A468C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21C38E9-FDE3-4882-8B6C-FC4982A468C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{894F2354-315F-4DB5-B24C-1596F7F61E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{894F2354-315F-4DB5-B24C-1596F7F61E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{894F2354-315F-4DB5-B24C-1596F7F61E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{894F2354-315F-4DB5-B24C-1596F7F61E43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1B0E82E-00CE-4A81-9040-EF0B4BC35A43}
+	EndGlobalSection
+EndGlobal

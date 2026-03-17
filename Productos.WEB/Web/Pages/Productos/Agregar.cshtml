@@ -1,0 +1,85 @@
+﻿@page
+@model Web.Pages.Productos.AgregarModel
+@{
+}
+<h1>Agregar Producto</h1>
+<div class="container">
+    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto">
+        <form method="post">
+            <div class="form-group">
+                <label for="categorias">Categoria</label>
+                <select asp-for="categoriaseleccionada" class="form-select" asp-items="Model.categorias" id="categorias" onchange="fectCategorias()">
+                    <option value="">Seleccione una categoria</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="categorias">SubCategoria</label>
+                <select asp-for="producto.IdSubCategoria" class="form-select" asp-items="Model.subCategorias" id="subCategorias">
+                    <option value="">Seleccione una subcategoria</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="producto.Nombre"></label>
+                <input class="form-control" asp-for="producto.Nombre" />
+                <span class="text-danger" asp-validation-for="producto.Nombre"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="producto.Descripcion"></label>
+                <input class="form-control" asp-for="producto.Descripcion" />
+                <span class="text-danger" asp-validation-for="producto.Descripcion"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="producto.Precio"></label>
+                <input class="form-control" asp-for="producto.Precio" />
+                <span class="text-danger" asp-validation-for="producto.Precio"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="producto.Stock"></label>
+                <input class="form-control" asp-for="producto.Stock" />
+                <span class="text-danger" asp-validation-for="producto.Stock"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="producto.CodigoBarras"></label>
+                <input class="form-control" asp-for="producto.CodigoBarras" />
+                <span class="text-danger" asp-validation-for="producto.CodigoBarras"></span>
+            </div>
+
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <a class="btn btn-primary" asp-page="./index">Regresar</a>
+                <input type="submit" value="Agregar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        async function fectSubCategorias() {
+            const categoriaId = document.getElementById("categorias").value;
+            if (!categoriaId) { return; }
+
+            try {
+                const response = await fetch(`?handler=ObtenerSubCategorias&categoriaId=${categoriaId}`);
+                if (!response.ok){
+                    throw new Error ('Error obteniendo los datos')
+                }
+                const subCategorias = await response.json();
+                const subCategoriasSelect = document.getElementById("subCategorias");
+                subCategoriasSelect.innerHTML = '<option value="">Seleccione una subCategoria</option>';
+                subCategorias.forEach(
+                    subCategoria => {
+                        const option = document.createElement("option");
+                        option.value = subCategoria.id;
+                        option.text = subCategoria.nombre;
+                        subCategoriasSelect.appendChild(option);
+                    });
+            } catch (error) {
+                console.error('Error obteniendo los datos', error);
+            }
+        }
+    </script>
+        {
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+}
