@@ -39,8 +39,8 @@ namespace Abstracciones.Modelos
     public class ProductoResponse : ProductoBase
     {
         public Guid Id { get; set; }
-        public string SubCategoria { get; set; }
-        public string Categoria { get; set; }
+        public string? SubCategoria { get; set; }
+        public string? Categoria { get; set; }
     }
 
     public class ProductoDetalle : ProductoResponse
